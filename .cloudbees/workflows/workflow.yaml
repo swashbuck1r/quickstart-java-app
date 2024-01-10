@@ -10,16 +10,10 @@ on:
 jobs:
   build-and-publsh:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
-          echo "hello world2"
-
       - name: checkout code
         uses: cloudbees-io/checkout@v1
 
-      - name: build
+      - name: Build JAR
         uses: docker://maven:3.9.6-eclipse-temurin-17
         shell: sh
         run: |
@@ -31,6 +25,7 @@ jobs:
           registry: index.docker.io # or docker.io
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
       - name: Push image to the configured OCI Registry
         uses: cloudbees-io/kaniko@v1
         with:

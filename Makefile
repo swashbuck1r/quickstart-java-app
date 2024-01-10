@@ -27,7 +27,7 @@ clean:
 
 .PHONY: build
 build: init ## Build and install the binary.
-	docker run -it --rm --name=$(APP_NAME) -v "$(PWD)":/usr/src/mymaven -w /usr/src/mymaven maven:3.9.6-eclipse-temurin-17 mvn clean install
+	docker run -it --rm --name=$(APP_NAME) -v "$(PWD)":/build -w /build maven:3.9.6-eclipse-temurin-17 mvn clean install
 
 .PHONY: run
 run:
@@ -40,7 +40,7 @@ docker-build: build ## Build the container
 
 .PHONY: docker-run
 docker-run: ## Run the container
-	docker run -i -t --rm -p=$(PORT):$(PORT) --name="$(APP_NAME)" -e CHOKIDAR_USEPOLLING=true $(APP_NAME)
+	docker run -i -t --rm -p=$(PORT):$(PORT) --name="$(APP_NAME)" $(APP_NAME)
 
 .PHONY: shell
 shell:
