@@ -25,14 +25,14 @@ jobs:
         run: |
           mvn clean install
 
-      # - name: Setup Dockerhub container registry
-      #   uses: cloudbees-io/configure-oci-credentials@v1
-      #   with:
-      #     registry: index.docker.io # or docker.io
-      #     username: ${{ vars.DOCKERHUB_USERNAME }}
-      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
-      # - name: Push image to the configured OCI Registry
-      #   uses: cloudbees-io/kaniko@v1
-      #   with:
-      #     destination: ${{ vars.DOCKERHUB_USERNAME }}/sample-go-app:1.0.9
+      - name: Setup Dockerhub container registry
+        uses: cloudbees-io/configure-oci-credentials@v1
+        with:
+          registry: index.docker.io # or docker.io
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Push image to the configured OCI Registry
+        uses: cloudbees-io/kaniko@v1
+        with:
+          destination: ${{ vars.DOCKERHUB_USERNAME }}/quickstart-java-app:${{ cloudbees.version }}
   
