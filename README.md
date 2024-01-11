@@ -30,7 +30,7 @@ jobs:
 * The `Build JAR` command step runs the required `mvn` commands using the `maven:3.9.6-eclipse-temurin-17` container.
 
 
-Based on [`pom.xml`](./pom.xml) file in this project, this workflow job will produce a runnable JAR file in the `target/` directory named `quickstart-java-app.jar`. 
+Based on the [`pom.xml`](./pom.xml) file in this project, this workflow job will produce a runnable JAR file in the `target/` directory named `quickstart-java-app.jar`. 
 
 ## Building and publishing a Java app as a container image
 
