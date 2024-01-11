@@ -4,7 +4,7 @@ This quickstart shows how to setup a Java (Maven+Springboot) project that uses a
 ## Building and publishing containerized Java applications using CloudBees workflows
 
 
-When automating the delivery of your Java-based software components, workflows need to be able to execute steps that use the Java and Maven tool-sets.  The [`workflow.yaml`](./cloudbees/workflows/workflow.yaml) file in this project shows how to leverage a `maven` container image to build the project into a self-contained JAR file.  The [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action can then be used to build and publish the app as a container image that can be deployed into container-friendly runtimes (Kubernetes, AWS ECS, etc). 
+When automating the delivery of your Java-based software components, workflows need to be able to execute steps that use the Java and Maven tool-sets.  The [`workflow.yaml`](.cloudbees/workflows/workflow.yaml) file in this project shows how to leverage a `maven` container image to build the project into a self-contained JAR file.  The [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action can then be used to build and publish the app as a container image that can be deployed into container-friendly runtimes (Kubernetes, AWS ECS, etc). 
 
 
 ## Building maven-based Java apps using a workflow
