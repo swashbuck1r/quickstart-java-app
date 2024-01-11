@@ -27,8 +27,7 @@ jobs:
 
 
 * The `Checkout code` step uses the [`cloudbees-io/checkout`](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/source-code-management/checkout) action to pull down the repository source code into the current directory (also known as the `cloudbees.workspace` directory). 
-* The `Build JAR` command step runs the required `mvn` commands using the `maven:3.9.6-eclipse-temurin-17` container.
-
+* The `Build JAR` command step runs the required `mvn` commands using the `maven:3.9.6-eclipse-temurin-17` container.  This container is pre-built to support execution of the `java` and `mvn` CLI tools. 
 
 Based on the [`pom.xml`](./pom.xml) file in this project, this workflow job will produce a runnable JAR file in the `target/` directory named `quickstart-java-app.jar`. 
 
