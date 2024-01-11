@@ -34,7 +34,7 @@ Based on the [`pom.xml`](./pom.xml) file in this project, this workflow job will
 
 ## Building and publishing a Java app as a container image
 
-Once the Java app is built into a runnable JAR file, it can be transformed into a container image by defining a Dockerfile and then using the [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action to build abd publish the container image.
+Once the Java app is built into a runnable JAR file, it can be transformed into a container image by defining a Dockerfile and then using the [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action to build and publish the container image.
 
 ### 
 The [Dockerfile](./Dockerfile) in this project is designed to pull the JAR file into the container image and runs it using a base image that supports the Java Runtime Environment (JRE).
