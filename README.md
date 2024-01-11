@@ -36,6 +36,7 @@ Based on [`pom.xml`](./pom.xml) file in this project, this workflow job will pro
 
 Once the Java app is built into a runnable JAR file, it can be transformed into a container image by defining a Dockerfile and then using the [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action to build abd publish the container image.
 
+### 
 The [Dockerfile](./Dockerfile) in this project is designed to pull the JAR file into the container image and runs it using a base image that supports the Java Runtime Environment (JRE).
 
 ```
@@ -69,7 +70,7 @@ To automate the building and publishing of the container image, the following st
 ```
 
 * The `Configure container registry` step uses the [`cloudbees-io/configure-oci-credentials`](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/credentials/configure-oci-credentials) action initialize the credentials for an OCI-compatible container registry.  In this case, the targeted registry is Dockerhub, but other container registries are also supported (ex: GitHub Container Registry,  AWS Elastic Container Registry, or JFrog Artifactory).
-* The `Build and publish container image` step uses the [kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action to build and publish the container image to the target container registry.
+* The `Build and publish container image` step uses the [cloudbees-io/kaniko](https://docs.cloudbees.com/docs/cloudbees-saas-platform/latest/deploy-tools/kaniko) action to build and publish the container image to the target container registry.
 * The steps leverage a few externally configured variables that are maintained outside the workflow:
   * `vars.DOCKERHUB_USERNAME` - accesses the DOCKERHUB_USERNAME configuration property value for this workflow.
   * `secrets.DOCKERHUB_PASSWORD` - accesses the *secret* DOCKERHUB_PASSWORD configuration property value for this workflow.
