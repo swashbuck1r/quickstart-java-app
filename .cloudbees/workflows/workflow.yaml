@@ -30,4 +30,5 @@ jobs:
         uses: cloudbees-io/kaniko@v1
         with:
           destination: ${{ vars.DOCKERHUB_USERNAME }}/quickstart-java-app:${{ cloudbees.version }}
+
   
